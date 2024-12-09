@@ -2,11 +2,7 @@
   hosts: local
   connection: local
   vars:
-    my_number = 100
-  # vars_prompt:
-  # - name: my_number
-  #   prompt: please enter the number
-  #   private: false
+    my_number: 100
   tasks:
   - name: print this if less than 10
     ansible.builtin.debug:
