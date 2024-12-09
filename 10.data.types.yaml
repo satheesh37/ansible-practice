@@ -10,7 +10,7 @@
     - terraform
     - aws
     - k8
-    live: true
+  live: true
     tools:
       ci: jenkins
       cm: ansible
