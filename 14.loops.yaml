@@ -1,6 +1,6 @@
 - name : loops demo
-  hosts: local
-  connection: local
+  hosts: web
+  become: yes
   tasks:
   - name: prints names
     ansible.builtin.package:
@@ -11,4 +11,4 @@
     - nginx
     - postfix
 
-    
+
