@@ -19,4 +19,10 @@
     ansible.builtin.debug:
       msg: "{{ greeting | lower }}" 
 
-               
+
+  - name: get the unique values
+    vars:
+      number: [1,2,3,3,2,1,4]
+    ansible.builtin.debug:
+      msg: "{{ number | unique }}"
+                     
