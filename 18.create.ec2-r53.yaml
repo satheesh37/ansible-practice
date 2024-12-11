@@ -1,0 +1,21 @@
+- name: craete ec2 and r53
+  hosts: local
+  connection: local
+  vars:
+    subnet_id: "subnet-055b24dad0dcf6e31"
+    sg_id: "sg-0540a26bb3368b179"
+    ami_id: "ami-09c813fb71547fc4f"
+    instances:
+    - mysql
+    - frontend
+    - backend
+  tasks:
+  - name: create ec2 user
+    amazon.aws.ec2_instance:
+      name: "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: ""t3.micro"
+      security_group: "{{ sg_id }}"
+      image_id: "{{ ami_id }}"
+    loop: "{{ instance }}"
+    register: ec2_instance    
