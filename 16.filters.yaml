@@ -41,5 +41,11 @@
         duration: 120
         trainer: satheesh
     ansible.builtin.debug:
-      msg: "{{ course | dict2items }}"      
+      msg: "{{ course | dict2items }}"
+
+  - name: check ip address
+    vars:
+      myip: "192.168.1.1"
+    ansible.builtin.debug:
+      msg: "{{ myip | ansible.utils.ipv4 }}"            
 
