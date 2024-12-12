@@ -31,7 +31,7 @@
     amazon.aws.route53:
       state: present
       zone: "{{ zone }}"
-      record: "{{ item.item }}. {{ zone }}"
+      record: "{{ item.item }} . {{ zone }}"
       type: A
       ttl: 1
       value: "{{ item.instance[0].private_ip_address }}"
